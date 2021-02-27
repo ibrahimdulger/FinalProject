@@ -1,4 +1,4 @@
-﻿using Core.DataAcces.EntityFramework;
+﻿using Core.DataAccess.EntityFramework;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
@@ -11,11 +11,11 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfProductDal : EfEntityRepositoryBase<Product, NorthWindContext>, IProductDal
+    public class EfProductDal : EfEntityRepositoryBase<Product, NorthwindContext>, IProductDal
     {
         public List<ProductDetailDto> GetProductDetails()
         {
-            using (NorthWindContext context = new NorthWindContext())
+            using (NorthwindContext context = new NorthwindContext())
             {
                 var result = from p in context.Products
                              join c in context.Categories
