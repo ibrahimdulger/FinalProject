@@ -32,8 +32,6 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-        //00.25 Dersteyiz
-        //Claim
         [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.get")]
@@ -56,7 +54,6 @@ namespace Business.Concrete
 
 
 
-            //23:10 Dersteyiz
         }
 
         [CacheAspect]
